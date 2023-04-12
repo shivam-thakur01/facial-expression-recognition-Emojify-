@@ -96,7 +96,7 @@ print(model.summary())
 from keras.optimizers import rmsprop_v2,sgd_experimental,adam_v2
 from keras.callbacks import ModelCheckpoint, EarlyStopping, ReduceLROnPlateau
 
-checkpoint = ModelCheckpoint('Emotion_little_vgg.h5',
+checkpoint = ModelCheckpoint('classifier_model.h5',
                              monitor='val_loss',
                              mode='min',
                              save_best_only=True,

@@ -21,10 +21,10 @@ classifier =load_model(r"C:\Users\satya\OneDrive\Documents\codechef_contest\ML P
 class_labels = ['Angry','Disgust','Fear','Happy','Neutral','Sad','Surprise']
 
 # For reading image from web camera
-# cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0)
 
 # For reading image from video
-cap = cv2.VideoCapture(r"C:\Users\satya\Downloads\The 7 basic emotions - Do you recognise all facial expressions_.mp4")   
+# cap = cv2.VideoCapture(r"C:\Users\satya\Downloads\The 7 basic emotions - Do you recognise all facial expressions_.mp4")   
 
 
 
@@ -50,6 +50,7 @@ while True:
         # make a prediction on the ROI, then lookup the class
 
             preds = classifier.predict(roi)[0]
+            print(preds)
             label=class_labels[preds.argmax()]
             label_position = (x,y)
             cv2.putText(frame,label,label_position,cv2.FONT_HERSHEY_SIMPLEX,2,(0,255,0),3)
